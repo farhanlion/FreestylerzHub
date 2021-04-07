@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <!-- less -->
+    <!-- <link rel="stylesheet/less" type="text/css" href="styles.less" /> -->
+    <!-- <script src="less.js" type="text/javascript"></script> -->
+    <!-- css -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/e57efbdb11.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="freestylers-data.js"></script>
+    <title>Freestylerz Hub</title>
+
+
+</head>
+
+<body>
+    <script id="nav" type="text/x-handlebars-template">
+        {{> navbar }}
+    </script>
+    <div id="nav-bar"></div>
+
+
+    <script id="person" type="text/x-handlebars-template">
+        <div class="freestyler title-section">
+            <div class="back">
+                <a id="backlink" href=""><i class="fa fa-arrow-left"></i></a>
+            </div>
+
+            <div class="title">
+                <h1 id="title">
+
+                </h1>
+            </div>
+
+
+        </div>
+        <div class="freestyler-bio-container">
+            {{#if this.img2}}
+            <div class="cartoon">
+                <img src="icons/{{this.img2}}" alt="">
+            </div>
+
+            {{/if}}
+
+            <div class="freestyler-bio">
+                <div class="bio-labels">
+                    <p>Full Name:</p>
+                    <p>Age:</p>
+                    <p>Country:</p>
+                    {{#if this.achievement}}
+                    <p>Achievement:</p>
+                    {{/if}}
+
+                </div>
+                <div class="bio-data">
+                    <p>{{this.name}}</p>
+                    <p>{{this.age}}</p>
+                    <p>{{this.country}}</p>
+                    {{#if this.achievement}}
+                    <p>{{{this.highlights}}}</p>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        <div class="description-section">
+            <div class="description-title">
+                <p>About:</p>
+            </div>
+            <div class="description-text">
+                <p>{{{this.description}}}</p>
+            </div>
+        </div>
+
+        <div class="freestyler-video-container">
+            <div class="freestyler-video">
+                <iframe src="{{this.featuredvid}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="social-title">
+            <h2>{{this.name}}'s Socail Media:</h2>
+        </div>
+        <div class="social-media">
+            {{#if this.instaURL}}
+            <a href="{{this.instaURL}}" target="_blank" rel="noopener noreferrer" class="fa fa-instagram"></a>
+            {{/if}} {{#if this.youtube}}
+            <a href="{{this.youtube}}" target="_blank" rel="noopener noreferrer" class="fa fa-youtube-play" style="font-size:48px;color:red"></a>
+            {{/if}}
+        </div>
+
+    </script>
+
+    <script src='typewriter.js'></script>
+    <script src="nav.js"></script>
+    <script src="freestyler.js"></script>
+</body>
+
+</html>
